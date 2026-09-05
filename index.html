@@ -168,6 +168,7 @@
                     </div>
                 </div>
 
+                <!-- Portfolio toolbar temporarily disabled; remove this comment to restore it.
                 <div class="portfolio-toolbar projects-reveal">
                     <div class="gallery-filters" role="toolbar" aria-label="Filter the nail gallery">
                         <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">All sets</button>
@@ -178,159 +179,371 @@
                     </div>
                     <p class="gallery-count" aria-live="polite"><strong>7</strong> photo spaces ready</p>
                 </div>
+                -->
 
                 <!--
                     NAIL PHOTO GUIDE
-                    1. Put each photo inside assets/img/nails/
-                    2. Add "has-photo" to the matching nail-card__media class.
-                    3. Add: style="--nail-photo: url('assets/img/nails/your-photo.jpg')"
-                    The gallery, filters, and pop-up viewer will keep working automatically.
+                    Put new photos in assets/img/nails/ and copy a photo card below.
+                    Update its image src, alt, width, height, title, and description.
+                    data-collapsed-count controls the preview; totals update automatically.
                 -->
-                <div class="nail-gallery" id="nailGallery">
-                    <article class="nail-card nail-card-featured projects-reveal" data-category="extensions art" data-service="Gel-X · Custom art" data-title="Featured Signature Set" data-description="Use this largest space for the set that best represents her style. It becomes the first thing visitors notice in the portfolio.">
+                <noscript><style>#nailGallery .projects-reveal { opacity: 1; transform: none; }</style></noscript>
+                <div class="nail-gallery" id="nailGallery" data-collapsed-count="6">
+                    <article class="nail-card nail-card-featured projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pink Petals" data-description="Pink almond nails with raised floral details, shown on crossed hands.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-one">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail1.jpg" alt="Pink almond nails with raised floral details, shown on crossed hands." width="1206" height="888" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">01</span>
                                 <span class="nail-card__badge"><i class="fas fa-crown" aria-hidden="true"></i> Featured set</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add her best nail photo</span>
-                                    <small>Landscape or portrait both work</small>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Gel-X · Custom art</span>
-                                    <h3>Featured Signature Set</h3>
-                                    <p>Give the most magical, detailed set the spotlight it deserves.</p>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pink Petals</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Featured Signature Set">
-                                    View set <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                                <button class="nail-card__open" type="button" aria-label="Open Pink Petals">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="extensions art" data-service="Acrylic · Hand-painted art" data-title="Acrylic Artistry" data-description="Show off a sculpted acrylic set here, especially one with detailed linework, color blending, or a dramatic shape.">
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Stars &amp; Stripes" data-description="A close view of long nails with red, white, and blue stripes and stars.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-two">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail6.jpg" alt="A close view of long nails with red, white, and blue stripes and stars." width="1206" height="902" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">02</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add acrylic set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Acrylic · Hand-painted</span>
-                                    <h3>Acrylic Artistry</h3>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Stars &amp; Stripes</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Acrylic Artistry">
+                                <button class="nail-card__open" type="button" aria-label="Open Stars &amp; Stripes">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="natural" data-service="Builder gel · Natural nails" data-title="Structured Manicure" data-description="This spot is perfect for a clean builder-gel manicure that shows her shaping, cuticle work, and glossy finish.">
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Gothic Details" data-description="Burgundy, black, and white nail art with raised details and graphic patterns.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-three">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail8.jpg" alt="Burgundy, black, and white nail art with raised details and graphic patterns." width="1206" height="885" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">03</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add builder-gel set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Builder gel · Natural nails</span>
-                                    <h3>Structured Manicure</h3>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Gothic Details</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Structured Manicure">
+                                <button class="nail-card__open" type="button" aria-label="Open Gothic Details">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="extensions" data-service="Gel-X · Shaping" data-title="Gel-X Extensions" data-description="Add a crisp Gel-X set to highlight length, shape, structure, and a smooth finished application.">
+                    <article class="nail-card projects-reveal" data-category="presson art" data-service="Custom press-ons" data-title="Crimson Press-Ons" data-description="A red, black, and nude press-on set with graphic linework, arranged on a light surface.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-four">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail11.jpg" alt="A red, black, and nude press-on set with graphic linework, arranged on a light surface." width="755" height="665" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">04</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add Gel-X set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Gel-X · Shaping</span>
-                                    <h3>Gel-X Extensions</h3>
+                                    <span class="nail-card__service">Custom press-ons</span>
+                                    <h3>Crimson Press-Ons</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Gel-X Extensions">
+                                <button class="nail-card__open" type="button" aria-label="Open Crimson Press-Ons">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="art extensions" data-service="3D art · Charms · Chrome" data-title="Statement Details" data-description="Use this space for a maximal set with sculpted details, crystals, charms, chrome, aura effects, or layered art.">
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Little Monsters" data-description="Bright blue and green nails with spotted patterns and playful eye designs.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-five">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail13.jpg" alt="Bright blue and green nails with spotted patterns and playful eye designs." width="1206" height="883" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">05</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add detailed art set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">3D art · Charms · Chrome</span>
-                                    <h3>Statement Details</h3>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Little Monsters</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Statement Details">
+                                <button class="nail-card__open" type="button" aria-label="Open Little Monsters">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="presson art" data-service="Custom press-ons · Made to measure" data-title="Custom Press-On Set" data-description="Feature a complete made-to-measure press-on collection here, including the packaging if she offers it.">
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Blue Blooms" data-description="Blue, black, and nude nail art with flower accents, photographed in sunlight.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-six">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail15.jpg" alt="Blue, black, and nude nail art with flower accents, photographed in sunlight." width="1206" height="882" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">06</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add press-on set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Custom · Made to measure</span>
-                                    <h3>Custom Press-Ons</h3>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Blue Blooms</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Custom Press-On Set">
+                                <button class="nail-card__open" type="button" aria-label="Open Blue Blooms">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                     </article>
 
-                    <article class="nail-card projects-reveal" data-category="natural art" data-service="Gel manicure · Minimal art" data-title="Soft &amp; Minimal" data-description="A delicate gel manicure, micro-French design, subtle aura, or tiny floral set will balance the bolder looks in the gallery.">
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pastel Picnic · Full Set" data-description="Colorful nails with pink and blue checks, flowers, hearts, and small fruit motifs.">
                         <div class="nail-card-inner">
-                            <div class="nail-card__media nail-placeholder-seven">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail18.jpg" alt="Colorful nails with pink and blue checks, flowers, hearts, and small fruit motifs." width="1206" height="900" loading="lazy" decoding="async" />
                                 <span class="nail-card__number">07</span>
-                                <div class="photo-placeholder">
-                                    <i class="fas fa-camera-retro" aria-hidden="true"></i>
-                                    <span>Add minimal set</span>
-                                </div>
                             </div>
                             <div class="nail-card__content">
                                 <div>
-                                    <span class="nail-card__service">Gel manicure · Minimal art</span>
-                                    <h3>Soft &amp; Minimal</h3>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pastel Picnic · Full Set</h3>
                                 </div>
-                                <button class="nail-card__open" type="button" aria-label="Open Soft and Minimal">
+                                <button class="nail-card__open" type="button" aria-label="Open Pastel Picnic · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pink Petals · Details" data-description="Pink floral nails shown with overlapping hands against green grass.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail2.jpg" alt="Pink floral nails shown with overlapping hands against green grass." width="1206" height="895" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">08</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pink Petals · Details</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Pink Petals · Details">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pink Petals · Full Set" data-description="Both hands showing soft pink nails with sculpted flower accents.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail3.jpg" alt="Both hands showing soft pink nails with sculpted flower accents." width="1206" height="889" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">09</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pink Petals · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Pink Petals · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Stars &amp; Stripes · Sparkler" data-description="Red, white, and blue nail art photographed while holding a sparkler.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail4.jpg" alt="Red, white, and blue nail art photographed while holding a sparkler." width="895" height="664" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">10</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Stars &amp; Stripes · Sparkler</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Stars &amp; Stripes · Sparkler">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Stars &amp; Stripes · Full Set" data-description="Long red, white, and blue nails with stripes, stars, and floral accents.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail5.jpg" alt="Long red, white, and blue nails with stripes, stars, and floral accents." width="1206" height="1592" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">11</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Stars &amp; Stripes · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Stars &amp; Stripes · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Gothic Details · Full Set" data-description="Long burgundy, black, and white nails with contrasting graphic designs.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail7.jpg" alt="Long burgundy, black, and white nails with contrasting graphic designs." width="1206" height="894" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">12</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Gothic Details · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Gothic Details · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Gothic Details · Close-Up" data-description="A close view of dark nail art with spirals, contrasting patterns, and raised accents.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail9.jpg" alt="A close view of dark nail art with spirals, contrasting patterns, and raised accents." width="1206" height="898" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">13</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Gothic Details · Close-Up</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Gothic Details · Close-Up">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Gothic Details · Both Hands" data-description="Both hands displaying pointed burgundy, black, and white nail designs.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail10.jpg" alt="Both hands displaying pointed burgundy, black, and white nail designs." width="1206" height="898" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">14</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Gothic Details · Both Hands</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Gothic Details · Both Hands">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="presson art" data-service="Custom press-ons" data-title="Crimson Press-Ons · Full Set" data-description="Ten red, black, and nude press-on nails displayed on a marble-patterned surface.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail12.jpg" alt="Ten red, black, and nude press-on nails displayed on a marble-patterned surface." width="1206" height="1592" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">15</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom press-ons</span>
+                                    <h3>Crimson Press-Ons · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Crimson Press-Ons · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Little Monsters · Full Set" data-description="Both hands showing blue spotted nails and bright green eye accents.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail14.jpg" alt="Both hands showing blue spotted nails and bright green eye accents." width="1206" height="891" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">16</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Little Monsters · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Little Monsters · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Blue Blooms · Details" data-description="A second close view of blue floral nails with dark patterned accents.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail16.jpg" alt="A second close view of blue floral nails with dark patterned accents." width="1206" height="895" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">17</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Blue Blooms · Details</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Blue Blooms · Details">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Blue Blooms · Full Set" data-description="Both hands showing blue flowers and blue-and-black graphic nail designs.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail17.jpg" alt="Both hands showing blue flowers and blue-and-black graphic nail designs." width="1206" height="893" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">18</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Blue Blooms · Full Set</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Blue Blooms · Full Set">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pastel Picnic" data-description="Long pastel nails with checks and playful floral details, shown on crossed hands.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail19.jpg" alt="Long pastel nails with checks and playful floral details, shown on crossed hands." width="1206" height="850" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">19</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pastel Picnic</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Pastel Picnic">
+                                    <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="nail-card projects-reveal" data-category="art" data-service="Custom nail art" data-title="Pastel Picnic · Details" data-description="A close view of pink and blue checks, flowers, and small colorful nail-art motifs.">
+                        <div class="nail-card-inner">
+                            <div class="nail-card__media has-photo has-image">
+                                <img class="nail-card__photo" src="assets/img/nails/nail20.jpg" alt="A close view of pink and blue checks, flowers, and small colorful nail-art motifs." width="1206" height="907" loading="lazy" decoding="async" />
+                                <span class="nail-card__number">20</span>
+                            </div>
+                            <div class="nail-card__content">
+                                <div>
+                                    <span class="nail-card__service">Custom nail art</span>
+                                    <h3>Pastel Picnic · Details</h3>
+                                </div>
+                                <button class="nail-card__open" type="button" aria-label="Open Pastel Picnic · Details">
                                     <span>View</span><i class="fas fa-arrow-right" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -351,6 +564,14 @@
                             </div>
                         </div>
                     </article>
+                </div>
+
+                <div class="gallery-expansion" id="galleryExpansion" hidden>
+                    <p class="gallery-summary" id="gallerySummary" role="status" aria-live="polite" aria-atomic="true"></p>
+                    <button class="portfolio-button gallery-expand-toggle" id="galleryToggle" type="button" aria-controls="nailGallery" aria-expanded="false">
+                        <span class="gallery-toggle-label">Show all photos</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <section class="nail-services projects-reveal" id="pricing" aria-labelledby="services-title">

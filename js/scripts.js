@@ -204,51 +204,74 @@ window.addEventListener('DOMContentLoaded', () => {
     const galleryCards = nailGallery ? Array.from(nailGallery.querySelectorAll('.nail-card')) : [];
     const photoCards = galleryCards.filter((card) => !card.classList.contains('nail-card-callout'));
     const galleryCount = document.querySelector('.gallery-count');
+    const galleryExpansion = document.querySelector('#galleryExpansion');
+    const galleryToggle = document.querySelector('#galleryToggle');
+    const galleryToggleLabel = galleryToggle?.querySelector('.gallery-toggle-label');
+    const gallerySummary = document.querySelector('#gallerySummary');
+    const requestedPreviewCount = Number(nailGallery?.dataset.collapsedCount);
+    const previewCount = Number.isInteger(requestedPreviewCount) && requestedPreviewCount > 0
+        ? requestedPreviewCount
+        : 6;
+    let galleryExpanded = false;
+    let selectedGalleryFilter = 'all';
 
-    const setGalleryCount = (filter) => {
-        if (!galleryCount) return;
+    const matchingPhotos = () => photoCards.filter((card) => (
+        selectedGalleryFilter === 'all'
+        || (card.dataset.category || '').split(' ').includes(selectedGalleryFilter)
+    ));
 
-        const visiblePhotos = photoCards.filter((card) => {
-            if (filter === 'all') return true;
-            return (card.dataset.category || '').split(' ').includes(filter);
-        }).length;
+    const renderGallery = () => {
+        const matching = matchingPhotos();
+        // If the expansion control is absent, keep every matching photo available.
+        const visible = galleryExpanded || !galleryToggle ? matching : matching.slice(0, previewCount);
+        const visibleSet = new Set(visible);
+        photoCards.forEach((card) => { card.hidden = !visibleSet.has(card); });
 
-        const label = visiblePhotos === 1 ? 'photo space ready' : 'photo spaces ready';
-        galleryCount.innerHTML = `<strong>${visiblePhotos}</strong> ${label}`;
+        if (galleryCount) {
+            galleryCount.textContent = `${matching.length} ${matching.length === 1 ? 'photo' : 'photos'}`;
+        }
+        if (gallerySummary) {
+            gallerySummary.textContent = `Showing ${visible.length} of ${matching.length} photos`;
+        }
+        if (galleryExpansion) galleryExpansion.hidden = matching.length <= previewCount;
+        if (galleryToggle) galleryToggle.setAttribute('aria-expanded', String(galleryExpanded));
+        if (galleryToggleLabel) {
+            galleryToggleLabel.textContent = galleryExpanded
+                ? 'Show fewer'
+                : `Show all ${matching.length} photos`;
+        }
     };
 
+    // These handlers remain ready for use if the commented toolbar is restored.
     galleryFilters.forEach((button) => {
         button.addEventListener('click', () => {
-            const selectedFilter = button.dataset.filter || 'all';
-
+            selectedGalleryFilter = button.dataset.filter || 'all';
+            galleryExpanded = false;
             galleryFilters.forEach((filterButton) => {
                 const isSelected = filterButton === button;
                 filterButton.classList.toggle('is-active', isSelected);
                 filterButton.setAttribute('aria-pressed', String(isSelected));
             });
-
-            if (!nailGallery) return;
-
-            nailGallery.classList.add('is-switching');
-
-            window.setTimeout(() => {
-                galleryCards.forEach((card) => {
-                    const categories = (card.dataset.category || '').split(' ');
-                    const isCallout = card.classList.contains('nail-card-callout');
-                    const shouldShow = selectedFilter === 'all' || isCallout || categories.includes(selectedFilter);
-                    card.hidden = !shouldShow;
-                });
-
-                setGalleryCount(selectedFilter);
-
-                window.requestAnimationFrame(() => {
-                    nailGallery.classList.remove('is-switching');
-                });
-            }, reduceMotion.matches ? 0 : 150);
+            renderGallery();
         });
     });
 
-    setGalleryCount('all');
+    galleryToggle?.addEventListener('click', () => {
+        galleryExpanded = !galleryExpanded;
+        renderGallery();
+
+        if (galleryExpanded) {
+            const firstNewPhoto = matchingPhotos()[previewCount];
+            firstNewPhoto?.querySelector('.nail-card__open')?.focus({ preventScroll: true });
+            firstNewPhoto?.scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+        } else {
+            // Keep the control in view when the long gallery contracts above it.
+            galleryToggle.focus({ preventScroll: true });
+            galleryToggle.scrollIntoView({ block: 'center', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+        }
+    });
+
+    renderGallery();
 
     const endingFireflies = document.querySelector('.ending-fireflies');
     if (endingFireflies) {
@@ -540,6 +563,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
             if (nailModalMedia && sourceMedia) {
                 const mediaClone = sourceMedia.cloneNode(true);
+                const modalPhoto = mediaClone.querySelector('img');
+                if (modalPhoto) modalPhoto.loading = 'eager';
                 nailModalMedia.replaceChildren(mediaClone);
             }
 

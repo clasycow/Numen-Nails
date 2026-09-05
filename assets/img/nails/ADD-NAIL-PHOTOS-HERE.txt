@@ -1,13 +1,38 @@
 NUMEN NAILS PHOTO FOLDER
 
-Add the artist's real nail photos to this folder.
+The gallery includes all 20 supplied photos, nail1.jpg through nail20.jpg.
+The original images have not been cropped, recolored, or recompressed.
 
-Recommended:
-- JPG or WebP format
-- At least 1200 pixels wide
-- Clear, bright photos without screenshots or social-media buttons
-- A mix of close-ups, full-hand poses, and detail shots
+GALLERY CONTROLS
 
-The website currently contains eight styled photo spaces. Send the photos back
-with the website files and they can be placed, cropped, named, and captioned for
-you.
+Six photos appear initially. Show all reveals the full gallery; Show fewer
+returns it to six. Every photo retains its View button for the larger viewer.
+The first six photos show different designs; every supplied image is included.
+
+ADDING MORE PHOTOS
+
+1. Copy a new JPG, PNG, or WebP into this folder, using a unique filename.
+2. In index.html, copy one photo <article> inside the #nailGallery element.
+   Put it before the nail-card-callout article. Do not copy the callout itself.
+3. Update the image src, alt, width, and height. Update the card's data-title,
+   data-description, visible heading, and View button's aria-label.
+4. Keep loading="lazy", decoding="async", and the existing photo-card classes.
+5. If copying the featured card, remove nail-card-featured and its badge unless
+   the new card should also be featured. Update the displayed photo number.
+
+The Show all label and photo count update automatically on page load.
+To change the preview size, edit data-collapsed-count="6" on #nailGallery.
+
+TOOLBAR
+
+The complete portfolio-toolbar section is preserved inside an HTML comment
+in index.html. Its CSS and filter handlers remain available. Remove the outer
+comment to restore it. If using filters again, assign the appropriate
+data-category values to each photo card.
+
+APPLYING THIS GALLERY UPDATE
+
+The changed website files are index.html, css/styles.css, js/scripts.js,
+and this folder. Copy those to the corresponding locations in your project.
+The inquiry configuration, backend, pricing, policies, and other pages in the
+saved website package are unchanged by this gallery update.
