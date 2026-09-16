@@ -1,38 +1,43 @@
 NUMEN NAILS PHOTO FOLDER
 
-The gallery includes all 20 supplied photos, nail1.jpg through nail20.jpg.
-The original images have not been cropped, recolored, or recompressed.
+The gallery has seven nail sets containing all 20 supplied photos.
+Each set has one cover card. Opening it shows that set's photos together,
+with previous/next arrows, thumbnails, keyboard arrows, and touch swiping.
+Six sets appear initially; Show all sets and Show fewer control the rest.
 
-GALLERY CONTROLS
+ADDING ANOTHER PHOTO OF AN EXISTING SET
 
-Six photos appear initially. Show all reveals the full gallery; Show fewer
-returns it to six. Every photo retains its View button for the larger viewer.
-The first six photos show different designs; every supplied image is included.
+1. Copy the photo into this folder, using a unique filename.
+2. In index.html, find that set's article inside #nailGallery.
+3. Add an img inside its <template class="nail-set-photos">. Copy an existing
+   image line and update src, alt, width, and height for the new photo.
+4. Keep class="nail-set-photo", loading="lazy", and decoding="async".
+   The photo count and viewer update automatically on page load.
+5. If you change the cover, also update the image inside .nail-set-cover.
 
-ADDING MORE PHOTOS
+ADDING A DIFFERENT NAIL SET
 
-1. Copy a new JPG, PNG, or WebP into this folder, using a unique filename.
-2. In index.html, copy one photo <article> inside the #nailGallery element.
-   Put it before the nail-card-callout article. Do not copy the callout itself.
-3. Update the image src, alt, width, and height. Update the card's data-title,
-   data-description, visible heading, and View button's aria-label.
-4. Keep loading="lazy", decoding="async", and the existing photo-card classes.
-5. If copying the featured card, remove nail-card-featured and its badge unless
-   the new card should also be featured. Update the displayed photo number.
+Copy one complete set article, including its template, before the
+nail-card-callout article. Give it a unique data-set-id, then update its
+name, description, service, category, cover, image descriptions, and photos.
+Update the displayed set number and initial photo-count/accessible labels.
+Use a separate card only for a different design, not for another angle.
 
-The Show all label and photo count update automatically on page load.
-To change the preview size, edit data-collapsed-count="6" on #nailGallery.
+PHOTO SHAPE AND ORIENTATION
 
-TOOLBAR
+Cards, the main viewer, and thumbnails use consistent horizontal 3:2 frames.
+Photos fit fully inside them without stretching or cropping the nail art.
+Portrait photos stay upright in the wide frame. The sideways angle of the
+Chinese Press-Ons (nail12.jpg) uses data-rotation="-90" to display upright.
+Keep that attribute only on photos that need a counterclockwise quarter turn.
+The original photo files remain unchanged.
 
-The complete portfolio-toolbar section is preserved inside an HTML comment
-in index.html. Its CSS and filter handlers remain available. Remove the outer
-comment to restore it. If using filters again, assign the appropriate
-data-category values to each photo card.
+GALLERY PREVIEW AND TOOLBAR
 
-APPLYING THIS GALLERY UPDATE
+Edit data-collapsed-count="6" on #nailGallery to change the number of sets
+shown initially. Counts refer to sets; each card lists its own photo count.
+The portfolio-toolbar remains commented out in index.html. Its filters
+and handlers remain available if that toolbar is restored later.
 
-The changed website files are index.html, css/styles.css, js/scripts.js,
-and this folder. Copy those to the corresponding locations in your project.
-The inquiry configuration, backend, pricing, policies, and other pages in the
-saved website package are unchanged by this gallery update.
+Gallery layout rules are in css/nail-gallery.css, and the viewer behavior
+is in js/scripts.js.

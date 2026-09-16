@@ -202,7 +202,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const nailGallery = document.querySelector('#nailGallery');
     const galleryFilters = document.querySelectorAll('.gallery-filter');
     const galleryCards = nailGallery ? Array.from(nailGallery.querySelectorAll('.nail-card')) : [];
-    const photoCards = galleryCards.filter((card) => !card.classList.contains('nail-card-callout'));
+    const setCards = galleryCards.filter((card) => !card.classList.contains('nail-card-callout'));
+    const photosByCard = new Map(setCards.map((card) => {
+        const template = card.querySelector('.nail-set-photos');
+        const photos = template
+            ? Array.from(template.content.querySelectorAll('img'))
+            : Array.from(card.querySelectorAll('.nail-card__photo'));
+        const count = card.querySelector('.nail-set-count');
+        if (count) count.textContent = `${photos.length} ${photos.length === 1 ? 'photo' : 'photos'}`;
+        card.querySelectorAll('[data-open-set]').forEach((button) => {
+            button.setAttribute('aria-label', `View all ${photos.length} photos of ${card.dataset.title}`);
+        });
+        return [card, photos];
+    }));
     const galleryCount = document.querySelector('.gallery-count');
     const galleryExpansion = document.querySelector('#galleryExpansion');
     const galleryToggle = document.querySelector('#galleryToggle');
@@ -215,30 +227,30 @@ window.addEventListener('DOMContentLoaded', () => {
     let galleryExpanded = false;
     let selectedGalleryFilter = 'all';
 
-    const matchingPhotos = () => photoCards.filter((card) => (
+    const matchingSets = () => setCards.filter((card) => (
         selectedGalleryFilter === 'all'
         || (card.dataset.category || '').split(' ').includes(selectedGalleryFilter)
     ));
 
     const renderGallery = () => {
-        const matching = matchingPhotos();
-        // If the expansion control is absent, keep every matching photo available.
+        const matching = matchingSets();
+        // If the expansion control is absent, keep every matching set available.
         const visible = galleryExpanded || !galleryToggle ? matching : matching.slice(0, previewCount);
         const visibleSet = new Set(visible);
-        photoCards.forEach((card) => { card.hidden = !visibleSet.has(card); });
+        setCards.forEach((card) => { card.hidden = !visibleSet.has(card); });
 
         if (galleryCount) {
-            galleryCount.textContent = `${matching.length} ${matching.length === 1 ? 'photo' : 'photos'}`;
+            galleryCount.textContent = `${matching.length} ${matching.length === 1 ? 'set' : 'sets'}`;
         }
         if (gallerySummary) {
-            gallerySummary.textContent = `Showing ${visible.length} of ${matching.length} photos`;
+            gallerySummary.textContent = `Showing ${visible.length} of ${matching.length} sets`;
         }
         if (galleryExpansion) galleryExpansion.hidden = matching.length <= previewCount;
         if (galleryToggle) galleryToggle.setAttribute('aria-expanded', String(galleryExpanded));
         if (galleryToggleLabel) {
             galleryToggleLabel.textContent = galleryExpanded
                 ? 'Show fewer'
-                : `Show all ${matching.length} photos`;
+                : `Show all ${matching.length} sets`;
         }
     };
 
@@ -261,9 +273,9 @@ window.addEventListener('DOMContentLoaded', () => {
         renderGallery();
 
         if (galleryExpanded) {
-            const firstNewPhoto = matchingPhotos()[previewCount];
-            firstNewPhoto?.querySelector('.nail-card__open')?.focus({ preventScroll: true });
-            firstNewPhoto?.scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+            const firstNewSet = matchingSets()[previewCount];
+            firstNewSet?.querySelector('.nail-card__open')?.focus({ preventScroll: true });
+            firstNewSet?.scrollIntoView({ block: 'start', behavior: reduceMotion.matches ? 'auto' : 'smooth' });
         } else {
             // Keep the control in view when the long gallery contracts above it.
             galleryToggle.focus({ preventScroll: true });
@@ -540,11 +552,42 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const nailModal = document.querySelector('#nailModal');
-    const nailModalMedia = document.querySelector('#nailModalMedia');
+    const nailModalPhoto = document.querySelector('#nailModalPhoto');
+    const nailPhotoStage = document.querySelector('#nailPhotoStage');
+    const nailPhotoCounter = document.querySelector('#nailPhotoCounter');
+    const nailPhotoPrevious = document.querySelector('#nailPhotoPrevious');
+    const nailPhotoNext = document.querySelector('#nailPhotoNext');
+    const nailPhotoThumbnails = document.querySelector('#nailPhotoThumbnails');
     const nailModalTitle = document.querySelector('#nailModalTitle');
     const nailModalService = document.querySelector('#nailModalService');
     const nailModalDescription = document.querySelector('#nailModalDescription');
     const nailModalClose = document.querySelector('.nail-modal__close');
+    let activeSetPhotos = [];
+    let activePhotoIndex = 0;
+    let modalTrigger = null;
+    let swipeStart = null;
+
+    const showSetPhoto = (index) => {
+        if (!nailModalPhoto || !activeSetPhotos.length) return;
+        activePhotoIndex = (index + activeSetPhotos.length) % activeSetPhotos.length;
+        const source = activeSetPhotos[activePhotoIndex];
+        nailModalPhoto.src = source.getAttribute('src');
+        nailModalPhoto.alt = source.alt;
+        nailModalPhoto.width = source.width;
+        nailModalPhoto.height = source.height;
+        nailModalPhoto.dataset.rotation = source.dataset.rotation || '0';
+        if (nailPhotoCounter) {
+            nailPhotoCounter.textContent = `Photo ${activePhotoIndex + 1} of ${activeSetPhotos.length}`;
+        }
+        nailPhotoThumbnails?.querySelectorAll('button').forEach((thumbnail, thumbnailIndex) => {
+            thumbnail.setAttribute('aria-pressed', String(thumbnailIndex === activePhotoIndex));
+        });
+    };
+
+    const restoreModalFocus = () => {
+        swipeStart = null;
+        if (modalTrigger?.isConnected) modalTrigger.focus({ preventScroll: true });
+    };
 
     const closeNailModal = () => {
         if (!nailModal) return;
@@ -553,22 +596,18 @@ window.addEventListener('DOMContentLoaded', () => {
             nailModal.close();
         } else {
             nailModal.removeAttribute('open');
+            restoreModalFocus();
         }
     };
 
-    document.querySelectorAll('.nail-card__open').forEach((button) => {
+    document.querySelectorAll('[data-open-set]').forEach((button) => {
         button.addEventListener('click', () => {
-            if (!nailModal) return;
+            if (!nailModal || !nailModalPhoto) return;
 
             const card = button.closest('.nail-card');
-            const sourceMedia = card ? card.querySelector('.nail-card__media') : null;
-
-            if (nailModalMedia && sourceMedia) {
-                const mediaClone = sourceMedia.cloneNode(true);
-                const modalPhoto = mediaClone.querySelector('img');
-                if (modalPhoto) modalPhoto.loading = 'eager';
-                nailModalMedia.replaceChildren(mediaClone);
-            }
+            activeSetPhotos = photosByCard.get(card) || [];
+            if (!activeSetPhotos.length) return;
+            modalTrigger = button;
 
             if (nailModalTitle) nailModalTitle.textContent = card?.dataset.title || 'Nail Set';
             if (nailModalService) nailModalService.textContent = card?.dataset.service || 'Custom nail artistry';
@@ -576,19 +615,73 @@ window.addEventListener('DOMContentLoaded', () => {
                 nailModalDescription.textContent = card?.dataset.description || 'Ask about creating a custom version of this set.';
             }
 
+            if (nailPhotoThumbnails) {
+                nailPhotoThumbnails.replaceChildren();
+                nailPhotoThumbnails.setAttribute('aria-label', `Photos of ${card.dataset.title}`);
+                activeSetPhotos.forEach((source, index) => {
+                    const thumbnail = document.createElement('button');
+                    thumbnail.type = 'button';
+                    thumbnail.className = 'nail-photo-thumbnail';
+                    thumbnail.setAttribute('aria-label', `Show photo ${index + 1} of ${activeSetPhotos.length}: ${source.alt}`);
+                    thumbnail.setAttribute('aria-controls', 'nailModalPhoto');
+                    const photo = source.cloneNode();
+                    photo.alt = '';
+                    thumbnail.append(photo);
+                    thumbnail.addEventListener('click', () => showSetPhoto(index));
+                    nailPhotoThumbnails.append(thumbnail);
+                });
+                nailPhotoThumbnails.hidden = activeSetPhotos.length < 2;
+            }
+            if (nailPhotoPrevious) nailPhotoPrevious.disabled = activeSetPhotos.length < 2;
+            if (nailPhotoNext) nailPhotoNext.disabled = activeSetPhotos.length < 2;
+            showSetPhoto(0);
+
             if (typeof nailModal.showModal === 'function') {
                 nailModal.showModal();
             } else {
                 nailModal.setAttribute('open', '');
             }
+            nailModal.scrollTop = 0;
+            if (nailPhotoThumbnails) nailPhotoThumbnails.scrollLeft = 0;
+            nailModalClose?.focus({ preventScroll: true });
         });
     });
+
+    nailPhotoPrevious?.addEventListener('click', () => showSetPhoto(activePhotoIndex - 1));
+    nailPhotoNext?.addEventListener('click', () => showSetPhoto(activePhotoIndex + 1));
+
+    // Keep vertical scrolling available while swiping horizontally between photos.
+    nailPhotoStage?.addEventListener('pointerdown', (event) => {
+        if (event.pointerType === 'mouse' || !event.isPrimary) return;
+        swipeStart = { x: event.clientX, y: event.clientY };
+        nailPhotoStage.setPointerCapture(event.pointerId);
+    });
+    nailPhotoStage?.addEventListener('pointerup', (event) => {
+        if (!swipeStart) return;
+        const deltaX = event.clientX - swipeStart.x;
+        const deltaY = event.clientY - swipeStart.y;
+        swipeStart = null;
+        if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25) {
+            showSetPhoto(activePhotoIndex + (deltaX < 0 ? 1 : -1));
+        }
+    });
+    nailPhotoStage?.addEventListener('pointercancel', () => { swipeStart = null; });
 
     if (nailModalClose) {
         nailModalClose.addEventListener('click', closeNailModal);
     }
 
     if (nailModal) {
+        nailModal.addEventListener('close', restoreModalFocus);
+        nailModal.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+                event.preventDefault();
+                showSetPhoto(activePhotoIndex + (event.key === 'ArrowRight' ? 1 : -1));
+            } else if (event.key === 'Escape') {
+                event.preventDefault();
+                closeNailModal();
+            }
+        });
         nailModal.addEventListener('click', (event) => {
             if (event.target === nailModal) closeNailModal();
         });
