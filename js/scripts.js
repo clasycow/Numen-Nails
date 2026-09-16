@@ -471,7 +471,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 requiredFields.forEach((field) => {
                     field.setAttribute('aria-invalid', String(!field.checkValidity()));
                 });
-                bookingStatus.textContent = 'A few details still need your magic before this can be sent.';
+                bookingStatus.textContent = invalidField.id === 'bookingAgreement'
+                    ? 'Please read and agree to the appointment policies before sending your inquiry.'
+                    : 'A few details still need your magic before this can be sent.';
                 bookingStatus.classList.add('is-error');
                 invalidField.focus();
                 return;

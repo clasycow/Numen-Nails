@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/client-agreement.css" rel="stylesheet" />
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
         <script src="js/config.js"></script>
     </head>
@@ -886,6 +887,14 @@
                                         <i class="fas fa-shield-heart" aria-hidden="true"></i>
                                         Photos are privately screened for unsafe content before delivery.
                                     </p>
+                                </div>
+                                <div class="booking-agreement enchanted-field-full">
+                                    <p id="bookingAgreementDetails">The client must be <strong>11 or older</strong>. No guests or accompanying children are allowed.</p>
+                                    <label class="booking-agreement-label" for="bookingAgreement">
+                                        <input id="bookingAgreement" name="policyAgreement" type="checkbox" value="accepted" aria-describedby="bookingAgreementDetails" required />
+                                        <span>I have read and agree to the client agreement and appointment policies.</span>
+                                    </label>
+                                    <a href="policies.html" target="_blank" rel="noopener">Read the full client agreement <span class="visually-hidden">(opens in a new tab)</span></a>
                                 </div>
                                 <div class="inquiry-challenge enchanted-field-full" id="inquiryChallenge" aria-label="Spam protection"></div>
                                 <label class="inquiry-honeypot" aria-hidden="true">

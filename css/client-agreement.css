@@ -1,0 +1,57 @@
+.booking-agreement {
+  padding: 1.15rem;
+  border: 1px solid rgba(236, 207, 158, 0.3);
+  border-radius: 0.95rem;
+  background: rgba(236, 207, 158, 0.05);
+  color: #f5e8f0;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.booking-agreement p {
+  margin: 0 0 0.9rem;
+}
+
+.booking-agreement strong {
+  color: #f2d69f;
+}
+
+.booking-agreement-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+.booking-agreement-label input {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem;
+  accent-color: #e8cb98;
+}
+
+.booking-agreement input:focus-visible,
+.booking-agreement a:focus-visible {
+  outline: 2px solid #f2d69f;
+  outline-offset: 4px;
+}
+
+.booking-agreement input[aria-invalid="true"] {
+  outline: 2px solid #ef97ac;
+  outline-offset: 3px;
+}
+
+.booking-agreement a {
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding-block: 0.4rem;
+  color: #f2d69f;
+  text-underline-offset: 0.2em;
+}
+
+.booking-agreement a:hover {
+  color: #fff3d8;
+}
