@@ -1,6 +1,6 @@
 NUMEN NAILS PHOTO FOLDER
 
-The gallery has seven nail sets containing all 20 supplied photos.
+The gallery has nine nail sets containing all 22 supplied photos.
 Each set has one cover card. Opening it shows that set's photos together,
 with previous/next arrows, thumbnails, keyboard arrows, and touch swiping.
 Six sets appear initially; Show all sets and Show fewer control the rest.

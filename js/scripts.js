@@ -211,7 +211,8 @@ window.addEventListener('DOMContentLoaded', () => {
         const count = card.querySelector('.nail-set-count');
         if (count) count.textContent = `${photos.length} ${photos.length === 1 ? 'photo' : 'photos'}`;
         card.querySelectorAll('[data-open-set]').forEach((button) => {
-            button.setAttribute('aria-label', `View all ${photos.length} photos of ${card.dataset.title}`);
+            const photoLabel = photos.length === 1 ? 'photo' : `all ${photos.length} photos`;
+            button.setAttribute('aria-label', `View ${photoLabel} of ${card.dataset.title}`);
         });
         return [card, photos];
     }));
