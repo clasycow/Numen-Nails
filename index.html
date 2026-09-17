@@ -18,10 +18,12 @@
         <link href="css/client-agreement.css" rel="stylesheet" />
         <link href="css/nail-gallery.css" rel="stylesheet" />
         <link href="css/hero-fairy.css?v=1" rel="stylesheet" />
+        <link href="css/enchanted-world.css?v=1" rel="stylesheet" />
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
         <script src="js/config.js"></script>
     </head>
-    <body class="is-loading" id="page-top">
+    <body class="is-loading page-enchanted" id="page-top" data-chapter="forest">
+        <a class="forest-skip-link" href="#projects">Skip to nail collections</a>
         <div class="enchanted-preloader" id="enchantedPreloader" role="status" aria-live="polite" aria-label="Loading Numen Nails">
             <div class="preloader-vignette" aria-hidden="true"></div>
             <div class="preloader-stars" aria-hidden="true">
@@ -46,7 +48,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Contact me</a>
+                <a class="navbar-brand forest-brand" href="#page-top" aria-label="Numen Nails home"><span class="forest-brand-moon" aria-hidden="true">☾</span><span>Numen Nails</span></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -71,6 +73,10 @@
                 <div class="hero-fairy-position">
                     <div class="hero-fairy-float">
                         <img class="hero-fairy-sprite" src="assets/img/fairy-sprite.webp" width="900" height="600" alt="" decoding="async" />
+                        <div class="hero-fairy-rig">
+                            <img class="fairy-wing-layer" src="assets/img/fairy-wings.webp" width="900" height="600" alt="" decoding="async" />
+                            <img class="fairy-body-layer" src="assets/img/fairy-body.webp" width="900" height="600" alt="" decoding="async" />
+                        </div>
                         <span class="hero-fairy-hand-glow"></span>
                         <span class="hero-fairy-dust" style="--dust-delay: 0s; --dust-x: 58px; --dust-y: 40px;"></span>
                         <span class="hero-fairy-dust" style="--dust-delay: -0.55s; --dust-x: 92px; --dust-y: 70px;"></span>
@@ -89,6 +95,7 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
+                        <span class="forest-eyebrow"><span aria-hidden="true">✦</span> A little magic, made yours</span>
                         <h1 class="mx-auto my-0" id="masthead-title">Numen Nails</h1>
 
 
@@ -102,6 +109,7 @@
 
                         <h2 class="mx-auto mt-3 mb-5">Enchanting nail art, made with a little bit of magic.</h2>
                         <a class="btn btn-primary" href="#about">Enter the Enchanted Forest</a>
+                        <a class="forest-gallery-link" href="#projects">Explore the nail collections <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
             </div>
@@ -114,6 +122,13 @@
                 <span class="hero-motion-label">Pause animation</span>
             </button>
         </header>
+
+        <nav class="forest-chapters" aria-label="Explore Numen Nails" hidden>
+            <span class="chapter-fairy" aria-hidden="true"><img src="assets/img/fairy-sprite.webp" alt="" width="90" height="60" /></span>
+            <a href="#about" data-chapter-link="about" aria-label="Meet the artist"><i aria-hidden="true"></i><span>The artist</span></a>
+            <a href="#projects" data-chapter-link="gallery" aria-label="Explore nail collections"><i aria-hidden="true"></i><span>The collections</span></a>
+            <a href="#contact" data-chapter-link="contact" aria-label="Create your dream set"><i aria-hidden="true"></i><span>Your dream set</span></a>
+        </nav>
 
 
 
@@ -154,7 +169,14 @@
             <span class="fairy-spark sparkle-three" aria-hidden="true"></span>
         </section>
    
-        <section class="projects-section nail-portfolio" id="projects" aria-labelledby="projects-title">
+        <section class="projects-section nail-portfolio" id="projects" aria-labelledby="projects-title" data-world="forest">
+            <div class="collection-worlds" aria-hidden="true">
+                <div class="collection-world collection-world-forest"></div>
+                <div class="collection-world collection-world-blossom"></div>
+                <div class="collection-world collection-world-midnight"></div>
+                <div class="collection-world collection-world-ocean"></div>
+                <div class="collection-world collection-world-starlight"></div>
+            </div>
             <div class="portfolio-transition" aria-hidden="true"></div>
             <div class="portfolio-ambience" aria-hidden="true">
                 <span class="portfolio-orb portfolio-orb-one"></span>
@@ -166,14 +188,25 @@
 
             <div class="container px-4 px-lg-5 portfolio-shell">
                 <header class="portfolio-heading projects-reveal">
-                    <span class="portfolio-kicker">The enchanted portfolio</span>
-                    <h2 id="projects-title">Nails made to feel like <em>you.</em></h2>
+                    <span class="portfolio-kicker">Little worlds. Endless possibilities.</span>
+                    <h2 id="projects-title">Find your kind of <em>magic.</em></h2>
                     <p>
                         From soft, delicate details to bold statement sets, every
                         appointment is shaped around your style, your inspiration,
                         and the little details that make it yours. Open a set to browse every photo.
                     </p>
                 </header>
+
+                <div class="world-selector projects-reveal" hidden>
+                    <div class="world-selector-heading"><span>Set the scene</span><p id="worldDescription">Moonlight, wildflowers &amp; a little wonder.</p></div>
+                    <div class="world-options" role="group" aria-label="Gallery atmosphere">
+                        <button type="button" data-select-world="forest" aria-pressed="true"><span aria-hidden="true">☾</span> Moonlit Forest</button>
+                        <button type="button" data-select-world="blossom" aria-pressed="false"><span aria-hidden="true">❀</span> Cherry Blossom</button>
+                        <button type="button" data-select-world="midnight" aria-pressed="false"><span aria-hidden="true">✧</span> Midnight</button>
+                        <button type="button" data-select-world="ocean" aria-pressed="false"><span aria-hidden="true">≈</span> Ocean</button>
+                        <button type="button" data-select-world="starlight" aria-pressed="false"><span aria-hidden="true">✦</span> Starlight</button>
+                    </div>
+                </div>
 
                 <div class="service-ribbon projects-reveal" aria-hidden="true">
                     <div class="service-ribbon-track">
@@ -590,6 +623,8 @@
         </section>
 
         <dialog class="nail-modal nail-modal--sets" id="nailModal" aria-labelledby="nailModalTitle">
+            <div class="collection-modal-atmosphere" aria-hidden="true"></div>
+            <p class="collection-modal-world" aria-hidden="true"></p>
             <button class="nail-modal__close" type="button" aria-label="Close nail set viewer" autofocus>
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -608,7 +643,7 @@
                 <span class="nail-modal__service" id="nailModalService"></span>
                 <h2 id="nailModalTitle">Nail Set</h2>
                 <p id="nailModalDescription"></p>
-                <a class="portfolio-button" href="#signup">
+                <a class="portfolio-button" href="#contact">
                     Ask for a set like this <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -837,7 +872,8 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js?v=gallery-photos-22"></script>
-        <script src="js/hero-fairy.js?v=1"></script>
+        <script src="js/scripts.js?v=enchanted-world-1"></script>
+        <script src="js/hero-fairy.js?v=2"></script>
+        <script src="js/enchanted-world.js?v=1"></script>
     </body>
 </html>

@@ -531,7 +531,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const currentYear = document.querySelector('#currentYear');
     if (currentYear) currentYear.textContent = String(new Date().getFullYear());
 
-    if (galleryCards.length && window.matchMedia('(pointer: fine)').matches && !reduceMotion.matches) {
+    if (galleryCards.length && !document.body.classList.contains('page-enchanted') && window.matchMedia('(pointer: fine)').matches && !reduceMotion.matches) {
         galleryCards.forEach((card) => {
             const cardInner = card.querySelector('.nail-card-inner');
             if (!cardInner) return;

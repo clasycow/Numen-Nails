@@ -13,11 +13,19 @@
     const updateMotion = () => {
         const paused = userPaused || reducedMotion.matches || !inView || document.hidden;
         hero.classList.toggle('is-hero-paused', paused);
-        toggle.hidden = !ready || reducedMotion.matches;
+        toggle.hidden = reducedMotion.matches;
         toggle.classList.toggle('is-paused', userPaused);
         const action = userPaused ? 'Play animation' : 'Pause animation';
         toggle.setAttribute('aria-label', action);
         label.textContent = action;
+        document.documentElement.classList.toggle('is-magic-paused', userPaused || reducedMotion.matches || document.hidden);
+        window.numenMotion = {
+            paused: userPaused || reducedMotion.matches || document.hidden,
+            heroPaused: paused,
+            reduced: reducedMotion.matches,
+            ready,
+        };
+        document.dispatchEvent(new CustomEvent('numen:motionchange', { detail: window.numenMotion }));
     };
 
     toggle.addEventListener('click', () => {
@@ -42,7 +50,7 @@
         }
     });
 
-    Promise.all(Array.from(scene.querySelectorAll('img'), imageReady))
+    Promise.all(Array.from(scene.querySelectorAll('.hero-forest, .hero-fairy-sprite'), imageReady))
         .then(() => {
             ready = true;
             hero.classList.add('is-fairy-ready');
@@ -51,7 +59,6 @@
         .catch(() => {
             // The existing background and navigation stay usable if an asset fails.
             scene.remove();
-            toggle.remove();
         });
 
     if ('IntersectionObserver' in window) {
