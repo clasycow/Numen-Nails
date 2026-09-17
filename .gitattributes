@@ -1,8 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
-# Keep downloadable brand assets intact and out of line-based diffs.
-*.pdf binary
-*.zip binary
-*.woff binary
-*.woff2 binary

@@ -62,8 +62,7 @@
     window.setTimeout(finishPreloader, 5200);
 })();
 
-window.addEventListener('DOMContentLoaded', async () => {
-    if (window.numenCatalogReady) await window.numenCatalogReady;
+window.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
     const masthead = document.querySelector('.masthead');
     const aboutSection = document.querySelector('.about-section');
@@ -510,7 +509,6 @@ window.addEventListener('DOMContentLoaded', async () => {
                 if (!response.ok) throw new Error(result.message || 'Your vision could not be delivered right now.');
 
                 bookingStatus.textContent = result.message || 'Your vision has been sent ✦';
-                document.dispatchEvent(new CustomEvent('numen:inquiry-sent', {detail:result}));
                 bookingForm.reset();
                 selectedPhotos = [];
                 renderPhotoPreviews();
