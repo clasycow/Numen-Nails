@@ -11,3 +11,7 @@
 
 /* The guide stays operable while a decorative fairy flies to a selected detail. */
 .fairy-guide button{position:relative}.fairy-guide button img{position:absolute;left:0;top:0}.guide-wings{transform-origin:89% 53%;animation:guide-wings .7s ease-in-out infinite alternate}.fairy-flight{position:fixed;width:130px;height:87px;pointer-events:none;z-index:30;left:0;top:0;filter:drop-shadow(0 0 16px #f3dba699)}.fairy-flight img{position:absolute;width:100%;inset:0}.fairy-flight .guide-wings{animation-duration:.28s}@keyframes guide-wings{from{transform:scaleX(.92) rotate(-2deg)}to{transform:scaleX(.66) rotate(4deg)}}
+
+/* Reserve the guide's corner so footer links stay easy to reach. */
+.atelier-footer>div{padding-right:110px;flex-wrap:wrap}
+.fairy-guide p{pointer-events:none}
