@@ -19,8 +19,10 @@
         <link href="css/nail-gallery.css" rel="stylesheet" />
         <link href="css/hero-fairy.css?v=1" rel="stylesheet" />
         <link href="css/enchanted-world.css?v=1" rel="stylesheet" />
+        <link href="css/atelier-gateway.css?v=1" rel="stylesheet" />
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
         <script src="js/config.js"></script>
+        <script src="js/catalog-loader.js?v=1"></script>
     </head>
     <body class="is-loading page-enchanted" id="page-top" data-chapter="forest">
         <a class="forest-skip-link" href="#projects">Skip to nail collections</a>
@@ -60,7 +62,7 @@
                         <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
                         <li class="nav-item"><a class="nav-link" href="silent-appointment.html">Silent Appointment</a></li>
                         <li class="nav-item"><a class="nav-link" href="policies.html">Policies</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Updates</a></li>
+                        <li class="nav-item"><a class="nav-link" href="studio.html">The Atelier</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -108,7 +110,7 @@
 
 
                         <h2 class="mx-auto mt-3 mb-5">Enchanting nail art, made with a little bit of magic.</h2>
-                        <a class="btn btn-primary" href="#about">Enter the Enchanted Forest</a>
+                        <a class="btn btn-primary" href="studio.html">Enter the Enchanted Atelier</a>
                         <a class="forest-gallery-link" href="#projects">Explore the nail collections <span aria-hidden="true">↗</span></a>
                     </div>
                 </div>
@@ -131,6 +133,11 @@
         </nav>
 
 
+
+        <section class="salon-gateway" id="atelier" aria-labelledby="atelier-title">
+            <div class="salon-gateway-copy"><span class="portfolio-kicker">A new door in the forest</span><h2 id="atelier-title">A little wonder.<br /><em>Entirely yours.</em></h2><p>Step inside the enchanted atelier. Explore the salon, dream up your own nail set, try it on a hand photo, and find a little inspiration along the way.</p><a href="studio.html" class="portfolio-button">Explore the atelier <span aria-hidden="true">↗</span></a><div class="salon-quick-links"><a href="studio.html#design">Create a set</a><a href="studio.html#quiz">Find my magic</a><a href="studio.html#storybook">Open the storybook</a></div></div>
+            <a class="salon-gateway-image" href="studio.html" aria-label="Enter the interactive enchanted nail salon"><img src="assets/img/enchanted-salon.webp" width="1536" height="1024" alt="A moonlit nail studio with a glass display cabinet, marble vanity, and open spellbook." loading="lazy" decoding="async" /><span>Step into the salon <b aria-hidden="true">↗</b></span></a>
+        </section>
 
         <section class="about-section" id="about" aria-labelledby="about-title">
             <div class="about-curve" aria-hidden="true"></div>
@@ -767,6 +774,7 @@
                                     <select name="service" id="bookingService" required>
                                         <option value="">Choose a service</option>
                                         <option>Acrylic full set</option>
+                                        <option>Fill</option>
                                         <option>Gel-X extensions</option>
                                         <option>Builder gel</option>
                                         <option>Custom nail art</option>
@@ -849,7 +857,7 @@
                             <a href="#pricing">Pricing</a>
                             <a href="silent-appointment.html">Silent Appointment</a>
                             <a href="policies.html">Policies</a>
-                            <a href="#signup">Updates</a>
+                            <a href="studio.html">The Atelier</a>
                             <a href="#contact">Contact</a>
                         </nav>
                         <div class="footer-socials">
@@ -875,5 +883,8 @@
         <script src="js/scripts.js?v=enchanted-world-1"></script>
         <script src="js/hero-fairy.js?v=2"></script>
         <script src="js/enchanted-world.js?v=1"></script>
+        <script src="js/studio-data.js"></script>
+        <script src="js/nail-renderer.js?v=1"></script>
+        <script src="js/atelier-gateway.js?v=1"></script>
     </body>
 </html>

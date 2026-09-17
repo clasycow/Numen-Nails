@@ -1,6 +1,7 @@
 /* Progressive enhancement: the original artwork, photos and links work without this file. */
-(() => {
+(async () => {
     'use strict';
+    if (window.numenCatalogReady) await window.numenCatalogReady;
     const body = document.body;
     const hero = document.querySelector('.masthead');
     if (!body.classList.contains('page-enchanted') || !hero) return;
@@ -91,7 +92,7 @@
         button.addEventListener('click', () => { chosenWorld = button.dataset.selectWorld; selectWorld(chosenWorld); });
     });
     document.querySelectorAll('.nail-card[data-set-id]').forEach(card => {
-        const world = setWorlds[card.dataset.setId] || 'forest';
+        const world = card.dataset.world || setWorlds[card.dataset.setId] || 'forest';
         card.dataset.world = world;
         const inner = card.querySelector('.nail-card-inner');
         const label = document.createElement('span');

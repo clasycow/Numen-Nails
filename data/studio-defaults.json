@@ -1,0 +1,230 @@
+{
+  "collections": [
+    {
+      "id": "hello-kitty-kuromi",
+      "title": "Hello Kitty & Kuromi",
+      "description": "Hot pink glitter press-ons with Hello Kitty and Kuromi, black stars, and leopard-print accents.",
+      "service": "Custom press-ons",
+      "world": "midnight",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail22.jpg",
+          "alt": "Ten hot pink Hello Kitty and Kuromi press-on nails arranged upright on dark marble.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "pink-horror",
+      "title": "Pink Horror",
+      "description": "Pink and nude press-ons with red drips, black stripes, web patterns, and raised eye details.",
+      "service": "Custom press-ons",
+      "world": "midnight",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail21.jpg",
+          "alt": "Ten pink and nude horror-inspired press-on nails with red drips and raised eye details, arranged upright on a pale pink surface.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "pink-petals",
+      "title": "Pink Petals",
+      "description": "Soft pink almond nails with sculpted floral details.",
+      "service": "Custom nail art",
+      "world": "blossom",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail1.jpg",
+          "alt": "Pink almond nails with raised floral details, shown on crossed hands.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail2.jpg",
+          "alt": "Pink floral nails shown with overlapping hands against green grass.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail3.jpg",
+          "alt": "Both hands showing soft pink nails with sculpted flower accents.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "stars-stripes",
+      "title": "Stars & Stripes",
+      "description": "Red, white, and blue nail art with stripes, stars, and floral accents.",
+      "service": "Custom nail art",
+      "world": "starlight",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail6.jpg",
+          "alt": "A close view of long nails with red, white, and blue stripes and stars.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail4.jpg",
+          "alt": "Red, white, and blue nail art photographed while holding a sparkler.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail5.jpg",
+          "alt": "Long red, white, and blue nails with stripes, stars, and floral accents.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "gothic-y2k-details",
+      "title": "Gothic Kitty Y2K",
+      "description": "Burgundy, black, and white nail art with graphic patterns and raised details.",
+      "service": "Custom nail art",
+      "world": "midnight",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail8.jpg",
+          "alt": "Burgundy, black, and white nail art with raised details and graphic patterns.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail7.jpg",
+          "alt": "Long burgundy, black, and white nails with contrasting graphic designs.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail9.jpg",
+          "alt": "A close view of dark nail art with spirals, contrasting patterns, and raised accents.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail10.jpg",
+          "alt": "Both hands displaying pointed burgundy, black, and white nail designs.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "chinese-press-ons",
+      "title": "Chinese Cherry Blossoms",
+      "description": "Red, black, and nude press-ons with dragon, blossom, and graphic details.",
+      "service": "Custom press-ons",
+      "world": "blossom",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail11.jpg",
+          "alt": "A red, black, and nude press-on set with graphic linework, arranged on a light surface.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail12.jpg",
+          "alt": "Ten red, black, and nude press-on nails displayed on a marble-patterned surface.",
+          "rotation": -90
+        }
+      ]
+    },
+    {
+      "id": "little-monsters",
+      "title": "Little Monsters",
+      "description": "Bright blue and green nails with spotted patterns and playful eye designs.",
+      "service": "Custom nail art",
+      "world": "forest",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail13.jpg",
+          "alt": "Bright blue and green nails with spotted patterns and playful eye designs.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail14.jpg",
+          "alt": "Both hands showing blue spotted nails and bright green eye accents.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "blue-blooms",
+      "title": "Ocean Blooms",
+      "description": "Blue, black, and nude nail art with flower accents and graphic details.",
+      "service": "Custom nail art",
+      "world": "ocean",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail15.jpg",
+          "alt": "Blue, black, and nude nail art with flower accents, photographed in sunlight.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail16.jpg",
+          "alt": "A second close view of blue floral nails with dark patterned accents.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail17.jpg",
+          "alt": "Both hands showing blue flowers and blue-and-black graphic nail designs.",
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "id": "pastel-picnic",
+      "title": "July Fireworks",
+      "description": "Pastel nails with pink and blue checks, flowers, hearts, and small fruit motifs.",
+      "service": "Custom nail art",
+      "world": "starlight",
+      "photos": [
+        {
+          "src": "assets/img/nails/nail19.jpg",
+          "alt": "Long pastel nails with checks and playful floral details, shown on crossed hands.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail18.jpg",
+          "alt": "Colorful nails with pink and blue checks, flowers, hearts, and small fruit motifs.",
+          "rotation": 0
+        },
+        {
+          "src": "assets/img/nails/nail20.jpg",
+          "alt": "A close view of pink and blue checks, flowers, and small colorful nail-art motifs.",
+          "rotation": 0
+        }
+      ]
+    }
+  ],
+  "prices": {
+    "full": [
+      45,
+      50,
+      55,
+      65,
+      75
+    ],
+    "fill": [
+      35,
+      40,
+      45,
+      55,
+      65
+    ],
+    "pressons": [
+      20,
+      30,
+      40,
+      45,
+      50
+    ],
+    "art": 2,
+    "gems": 2,
+    "ombre": 3,
+    "stickers": 3,
+    "threeD": 5,
+    "chrome": 2,
+    "catEye": 2,
+    "gel": 25,
+    "frenchGel": 30,
+    "removal": 20
+  },
+  "deposit": 10,
+  "timezone": "America/New_York"
+}

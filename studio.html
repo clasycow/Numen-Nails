@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#201b29"><meta name="description" content="Step into the Numen Nails enchanted atelier. Build a custom nail set, paint your ideas, try them on a hand photo, and find your inspiration.">
+  <title>The Enchanted Atelier | Numen Nails</title>
+  <link rel="icon" href="assets/img/numen-nails-fairy.jpg">
+  <link rel="stylesheet" href="css/studio.css?v=1">
+  <script src="js/config.js"></script><script src="js/studio-data.js"></script>
+  <script src="js/nail-renderer.js?v=1" defer></script><script src="js/studio.js?v=1" defer></script>
+</head>
+<body class="atelier" data-season="moonlight">
+  <a class="skip" href="#workspace">Skip to the atelier</a>
+  <header class="atelier-header">
+    <a class="atelier-brand" href="index.html"><span aria-hidden="true">☾</span><span>Numen <em>Nails</em></span></a>
+    <a class="back-link" href="index.html#projects">← Back to the forest</a>
+    <button class="quiet-button" id="motionButton" type="button" aria-pressed="false">Pause magic</button>
+  </header>
+  <main class="atelier-main" id="workspace">
+    <div class="atelier-intro"><div><p class="eyebrow">A world of your own</p><h1>The enchanted <em>atelier.</em></h1></div><p>Follow your curiosity.<br>Leave with a little more magic.</p></div>
+    <nav class="atelier-tabs" aria-label="Atelier rooms">
+      <a href="#salon" data-panel="salon" aria-current="page"><span>01</span> The salon</a>
+      <a href="#design" data-panel="design"><span>02</span> Create a set</a>
+      <a href="#tryon" data-panel="tryon"><span>03</span> Try it on</a>
+      <a href="#storybook" data-panel="storybook"><span>04</span> The storybook</a>
+      <a href="#quiz" data-panel="quiz"><span>05</span> Find my magic</a>
+      <a href="#booking" data-panel="booking"><span>06</span> Plan a visit</a>
+    </nav>
+    <noscript><p class="notice">The interactive atelier needs JavaScript. You can still <a href="index.html#projects">browse every nail set</a>, <a href="index.html#pricing">view prices</a>, or <a href="index.html#contact">plan an appointment</a>.</p></noscript>
+
+    <section id="panel-salon" class="studio-panel" aria-labelledby="salonTitle">
+      <div class="salon-scene" id="salonScene">
+        <img class="salon-art" src="assets/img/enchanted-salon.webp" alt="A moonlit woodland nail studio, with an antique display cabinet, a marble vanity, and an open spellbook." width="1536" height="1024" fetchpriority="high">
+        <div class="season-particles" aria-hidden="true"></div>
+        <div class="room-heading"><p class="eyebrow">Come in. Stay curious.</p><h2 id="salonTitle">Your little corner<br>of the <em>extraordinary.</em></h2></div>
+        <a class="salon-hotspot cabinet" href="#storybook"><span class="hotspot-dot">✦</span><span>The cabinet<small>Open the collections</small></span></a>
+        <a class="salon-hotspot vanity" href="#design"><span class="hotspot-dot">✦</span><span>The vanity<small>Create your dream set</small></span></a>
+        <button class="salon-hotspot spellbook" type="button" id="openPrices"><span class="hotspot-dot">✦</span><span>The spellbook<small>Explore services & prices</small></span></button>
+        <button class="room-secret secret-one" data-secret="mushroom" type="button" aria-label="Discover the glowing mushroom">♧</button>
+        <button class="room-secret secret-two" data-secret="star" type="button" aria-label="Catch the little star">✧</button>
+        <button class="room-secret secret-three" data-secret="moon" type="button" aria-label="Find the hidden moon">☾</button>
+        <div class="room-bottom"><p id="discoveryCount">Three little secrets are waiting.</p><label>Outside the window <select id="seasonSelect"><option value="moonlight">Moonlight</option><option value="spring">Spring bloom</option><option value="summer">Summer glow</option><option value="autumn">Autumn ember</option><option value="winter">Winter frost</option><option value="haunted">Haunted garden</option><option value="auto">Follow the season</option></select></label></div>
+      </div>
+      <div class="salon-links"><a href="#design"><span>Make it personal</span><h3>A dream set, from scratch. <b>↗</b></h3><p>Shape, color, chrome, a tiny constellation. Yours to play with.</p></a><a href="#quiz"><span>A little inspiration</span><h3>What’s your kind of magic? <b>↗</b></h3><p>Three small choices. A mood board made from real Numen sets.</p></a><a href="#tryon"><span>Picture the possibility</span><h3>Meet your next manicure. <b>↗</b></h3><p>Place your design on a photo of your own hand.</p></a></div>
+    </section>
+
+    <section id="panel-design" class="studio-panel" hidden aria-labelledby="designTitle">
+      <div class="panel-heading"><div><p class="eyebrow">At the vanity</p><h2 id="designTitle">Dream it. <em>Make it yours.</em></h2></div><p>A concept to share with your artist.<br>Final colors and details may vary.</p></div>
+      <div class="designer-layout">
+        <div class="preview-card"><div class="preview-top"><span id="previewLabel">3D material study</span><span class="tiny-label">Drag to turn · scroll to zoom</span></div><canvas id="nail3d" width="600" height="560" aria-label="Rotatable 3D nail preview. Use arrow keys to rotate, plus and minus to zoom, or Home to reset." tabindex="0"></canvas><div class="view-controls"><button type="button" id="rotateLeft" aria-label="Rotate preview left">↶</button><button type="button" id="resetView">Reset view</button><button type="button" id="rotateRight" aria-label="Rotate preview right">↷</button></div><div class="finger-picker" id="fingerPicker" role="group" aria-label="Select a nail to customize"></div><p class="preview-note">Select a nail below the preview to give each finger its own details.</p></div>
+        <div class="design-controls">
+          <div class="control-row"><label>Set type<select id="setType"><option value="full">Full set</option><option value="pressons">Custom press-ons</option><option value="fill">Fill</option></select></label><label>Length<select id="nailLength"><option value="0">Short</option><option value="1" selected>Medium</option><option value="2">Long</option><option value="3">XL</option><option value="4">XXL</option></select></label></div>
+          <fieldset><legend>01 / Shape</legend><div class="choice-row" id="shapeChoices"><button type="button" data-shape="almond" aria-pressed="true">Almond</button><button type="button" data-shape="oval" aria-pressed="false">Oval</button><button type="button" data-shape="coffin" aria-pressed="false">Coffin</button><button type="button" data-shape="square" aria-pressed="false">Square</button><button type="button" data-shape="stiletto" aria-pressed="false">Stiletto</button></div></fieldset>
+          <fieldset><legend>02 / Color <span id="activeFingerLabel">Thumb</span></legend><div class="swatch-row" id="colorSwatches"></div><label class="inline-label">Mix your own <input id="customColor" type="color" value="#c8a2d1"></label></fieldset>
+          <fieldset><legend>03 / Finish</legend><div class="choice-row" id="finishChoices"><button type="button" data-finish="gloss" aria-pressed="true">Gloss</button><button type="button" data-finish="matte" aria-pressed="false">Matte</button><button type="button" data-finish="chrome" aria-pressed="false">Chrome</button><button type="button" data-finish="glitter" aria-pressed="false">Glitter</button><button type="button" data-finish="aura" aria-pressed="false">Aura</button></div></fieldset>
+          <fieldset><legend>04 / A little detail</legend><div class="choice-row" id="charmChoices"><button type="button" data-charm="none" aria-pressed="true">Bare</button><button type="button" data-charm="star" aria-pressed="false">Star</button><button type="button" data-charm="moon" aria-pressed="false">Moon</button><button type="button" data-charm="flower" aria-pressed="false">Flower</button><button type="button" data-charm="gem" aria-pressed="false">Crystal</button></div></fieldset>
+          <button class="text-button" type="button" id="applyAll">Apply this nail’s look to all five ↗</button>
+          <div class="estimate"><div><span>Starting estimate</span><strong id="priceEstimate">$50</strong></div><p id="priceExplanation">For a full set. Art and extras are confirmed in your quote.</p><label class="check-label"><input type="checkbox" id="mirrorSet" checked> Mirror these five designs on the other hand</label></div>
+        </div>
+      </div>
+      <details class="paint-workbench" id="paintWorkbench"><summary>Make your own mark <span>Open the nail-art canvas +</span></summary><div class="paint-layout"><div><p class="eyebrow">The finishing touch</p><h3>Paint a little <em>personality.</em></h3><p>Draw on the selected nail. Switch fingers above to paint the next one. Drawing is clipped to the nail.</p><label>Brush color <input type="color" id="brushColor" value="#fff4d6"></label><label>Brush size <input type="range" id="brushSize" min="2" max="28" value="7"></label><div class="choice-row"><button type="button" id="undoPaint">Undo</button><button type="button" id="clearPaint">Clear this nail</button></div><p class="small-copy">The shape, color, and detail controls are also keyboard accessible.</p></div><canvas id="paintCanvas" width="360" height="480" aria-label="Draw on the selected nail using your finger or pointer"></canvas></div></details>
+      <div class="design-actions"><div class="action-group"><button class="primary-button" id="useDesign" type="button">Plan this set <span>↗</span></button><a class="secondary-button" href="#tryon">Try it on my hand</a></div><div class="action-group"><button class="quiet-button" id="saveDesign" type="button">Save this design</button><button class="quiet-button" id="downloadDesign" type="button">Download image ↓</button></div></div>
+      <details class="saved-work"><summary>My saved designs <span id="savedCount">0</span></summary><p>Saved in this browser. Download a copy to keep or share it.</p><div class="saved-grid" id="savedDesigns"></div></details>
+    </section>
+
+    <section id="panel-tryon" class="studio-panel" hidden aria-labelledby="tryonTitle">
+      <div class="panel-heading"><div><p class="eyebrow">A glimpse of the possibility</p><h2 id="tryonTitle">See it on <em>your hand.</em></h2></div><p>A manually placed visual mockup.<br>Your photo stays on this device.</p></div>
+      <div class="tryon-layout"><div class="tryon-stage" id="tryonStage"><div class="tryon-empty" id="tryonEmpty"><span aria-hidden="true">✧</span><h3>Your hand. Your design.</h3><p>Choose a clear, well-lit photo with your fingers spread.<br>Then move each nail into place.</p><label class="primary-button upload-button">Choose a hand photo<input id="handPhoto" type="file" accept="image/jpeg,image/png,image/webp"></label><small>JPG, PNG or WebP · up to 12 MB</small></div><canvas id="tryonCanvas" width="960" height="800" hidden aria-label="Hand photo with movable nail overlays" tabindex="0"></canvas></div><div class="tryon-controls"><p class="eyebrow">Make it fit</p><h3>A few little <em>adjustments.</em></h3><p>Drag a nail onto your fingertip. Use these controls to match its angle and size.</p><label>Selected nail<select id="overlayFinger"><option value="0">Thumb</option><option value="1">Index</option><option value="2">Middle</option><option value="3">Ring</option><option value="4">Little</option></select></label><label>Width <input id="overlayWidth" type="range" min="10" max="200" value="60"></label><label>Length <input id="overlayHeight" type="range" min="20" max="300" value="100"></label><label>Angle <input id="overlayAngle" type="range" min="-180" max="180" value="0"></label><label>Opacity <input id="overlayOpacity" type="range" min="20" max="100" value="92"></label><div class="nudge-controls" role="group" aria-label="Move selected nail"><button type="button" data-nudge="-3,0" aria-label="Move nail left">←</button><button type="button" data-nudge="0,-3" aria-label="Move nail up">↑</button><button type="button" data-nudge="0,3" aria-label="Move nail down">↓</button><button type="button" data-nudge="3,0" aria-label="Move nail right">→</button></div><button class="primary-button" type="button" id="downloadTryon" disabled>Download mockup ↓</button><button class="text-button" type="button" id="replacePhoto" disabled>Replace photo</button><button class="text-button" type="button" id="removePhoto" disabled>Remove photo from this session</button><a class="text-button" href="#design">← Change my design</a></div></div>
+    </section>
+
+    <section id="panel-storybook" class="studio-panel" hidden aria-labelledby="storyTitle">
+      <div class="panel-heading"><div><p class="eyebrow">Every set has a story</p><h2 id="storyTitle">The collection <em>chronicles.</em></h2></div><p>Real work. Little details.<br>Find a page that feels like you.</p></div>
+      <div class="storybook" id="storybook"><div class="book-photo-page"><img id="bookPhoto" src="assets/img/nails/nail22.jpg" alt=""><div class="book-photo-controls"><button type="button" id="bookPhotoPrev" aria-label="Previous collection photo">←</button><span id="bookPhotoCount"></span><button type="button" id="bookPhotoNext" aria-label="Next collection photo">→</button></div></div><div class="book-text-page"><p class="eyebrow" id="bookWorld"></p><span class="book-flourish" aria-hidden="true">✧</span><h3 id="bookTitle"></h3><p id="bookDescription"></p><div class="book-palette" id="bookPalette" aria-label="Collection mood palette"></div><p class="book-note">A starting point for your own story.</p><button type="button" class="ink-button" id="bookInspire">Create a set inspired by this ↗</button><div class="book-pagination"><button id="bookPrev" type="button" aria-label="Previous nail set">← Previous</button><span id="bookPage" role="status"></span><button id="bookNext" type="button" aria-label="Next nail set">Next →</button></div></div></div>
+      <label class="book-jump">Turn to a collection <select id="bookJump"></select></label>
+    </section>
+
+    <section id="panel-quiz" class="studio-panel" hidden aria-labelledby="quizTitle">
+      <div class="panel-heading"><div><p class="eyebrow">Let your imagination lead</p><h2 id="quizTitle">Find your kind of <em>magic.</em></h2></div><p>No wrong answers.<br>Just a little inspiration.</p></div>
+      <div class="quiz-shell" id="quizQuestions"><div class="quiz-progress"><span id="quizStep">01 / 03</span><span id="quizProgressBar"></span></div><h3 id="quizQuestion"></h3><div class="quiz-options" id="quizOptions"></div><button type="button" class="text-button" id="quizBack" hidden>← Previous question</button></div>
+      <div class="quiz-results" id="quizResults" hidden><p class="eyebrow">Your mood board</p><h3 id="quizResultTitle"></h3><p id="quizResultCopy"></p><div id="moodBoard" class="mood-board"></div><div class="action-group"><button class="primary-button" id="quizUse" type="button">Make this mood mine ↗</button><button class="quiet-button" type="button" id="quizRestart">Start again</button></div></div>
+    </section>
+
+    <section id="panel-booking" class="studio-panel" hidden aria-labelledby="bookingTitle">
+      <div class="panel-heading"><div><p class="eyebrow">From a little idea to your next set</p><h2 id="bookingTitle">Let’s make <em>something lovely.</em></h2></div><p>Request a visit.<br>Your appointment is confirmed personally.</p></div>
+      <div class="booking-layout"><div class="appointment-card"><h3>Your next visit</h3><p id="availabilityNote">Choose a preferred date and time. I’ll confirm availability with you.</p><div id="availableSlots" class="choice-row" hidden></div><label>Preferred date<input type="date" id="preferredDate"></label><label>Preferred time<select id="preferredTime"><option value="">I’m flexible</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></label><label class="check-label"><input type="checkbox" id="silentRequest"> I’d love a silent appointment</label><div class="booking-policy"><span>Before your visit</span><p>Clients 11+. No guests or accompanying children. Intricate longer sets can take 3–5 hours; please keep the rest of your day open.</p><p>$10 deposit through Cash App once your appointment is arranged. Remaining balance is cash only.</p><a href="policies.html">Read the client agreement ↗</a></div><button class="primary-button" type="button" id="continueInquiry">Continue to my inquiry ↗</button><p class="small-copy">You’ll review your details and send them on the next page.</p></div><div class="visit-design"><canvas id="bookingPreview" width="900" height="620" aria-label="Your current five-nail design"></canvas><h3>Your vision, all together.</h3><p id="bookingDesignSummary"></p><a href="#design" class="text-button">Make a few changes ↗</a><div id="depositInstructions" hidden><h4>Deposit instructions</h4><p>Only pay after the artist confirms your appointment details.</p><a id="depositLink" class="secondary-button" target="_blank" rel="noopener">Open Cash App ↗</a></div></div></div>
+    </section>
+  </main>
+  <aside class="fairy-guide" id="fairyGuide"><button id="fairyGuideButton" aria-label="Ask the fairy for a hint" aria-expanded="false" type="button"><img class="guide-wings" src="assets/img/fairy-wings.webp" width="90" height="60" alt=""><img class="guide-body" src="assets/img/fairy-body.webp" width="90" height="60" alt=""></button><p id="fairyHint" hidden>Welcome, dreamer. Tap a glowing marker to explore the salon.</p></aside>
+  <div class="toast" id="studioToast" role="status" aria-live="polite"></div>
+  <dialog id="pricesDialog" class="prices-dialog" aria-labelledby="pricesTitle"><button type="button" class="dialog-close" aria-label="Close pricing spellbook">×</button><p class="eyebrow">The service spellbook</p><h2 id="pricesTitle">Choose your <em>magic.</em></h2><div id="studioPrices"></div><p>Extras are priced per finger. Final details are confirmed in your quote.</p><a href="#booking" class="primary-button" id="pricesBook">Plan a visit ↗</a></dialog>
+  <footer class="atelier-footer"><p>Numen Nails <span>·</span> A little magic, made yours.</p><div><a href="index.html#contact">Contact</a><a href="policies.html">Policies</a><a href="brand-studio.html">Brand studio</a></div></footer>
+</body></html>
