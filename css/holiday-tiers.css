@@ -1,0 +1,267 @@
+/* Holiday offers and the nail art guide, in Numen's lavender-and-gold palette. */
+.holiday-section,
+.art-tier-section {
+  position: relative;
+  isolation: isolate;
+  color: #f8edf3;
+  scroll-margin-top: 6rem;
+}
+
+.holiday-section {
+  padding: clamp(3rem, 7vw, 6rem) 0;
+  background: radial-gradient(ellipse at 70% 48%, rgba(133, 85, 153, .15), transparent 65%), linear-gradient(#140e21, #120d1c);
+}
+
+.holiday-feature {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  max-width: 65rem;
+  margin: 0 auto;
+}
+
+.holiday-artwork {
+  position: relative;
+  padding: .65rem;
+  border: 1px solid rgba(235, 205, 166, .5);
+  border-radius: 12rem 12rem 1.4rem 1.4rem;
+  background: rgba(220, 186, 231, .04);
+  box-shadow: 0 1.8rem 5rem rgba(6, 2, 11, .35), 0 0 4rem rgba(193, 145, 213, .08);
+}
+
+.holiday-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 11.5rem 11.5rem 1rem 1rem;
+}
+
+.seasonal-eyebrow {
+  display: block;
+  color: #efd2a7;
+  font: 700 .68rem/1.8 "Nunito", sans-serif;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.holiday-copy h2 {
+  margin: 1rem 0 0;
+  color: #fff0e4;
+  font: 500 clamp(3.5rem, 6vw, 5.8rem)/1 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.035em;
+}
+
+.holiday-copy h2 em {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  color: #dfbee9;
+}
+
+.seasonal-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(100%, 15rem);
+  margin: 1.6rem 0;
+  color: #d6b684;
+  font-size: 1.35rem;
+}
+
+.seasonal-ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #b29573);
+}
+
+.seasonal-ornament span:last-child { transform: rotate(180deg); }
+
+.holiday-offer {
+  margin: 0;
+  color: #fff2e7;
+  font: 500 clamp(2rem, 3.7vw, 3.5rem)/1.05 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.02em;
+}
+
+.holiday-offer strong {
+  display: block;
+  margin-top: .25rem;
+  color: #edd4aa;
+  font-size: clamp(4.5rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: .04em;
+}
+
+.holiday-description {
+  max-width: 26rem;
+  margin: 1.4rem 0 1.8rem;
+  color: #d9c8df;
+  font: 400 1.1rem/1.75 "Cormorant Garamond", Georgia, serif;
+}
+
+.seasonal-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+  min-height: 3.2rem;
+  padding: .9rem 1.4rem;
+  border: 1px solid #ecd2e7;
+  border-radius: 999px;
+  color: #33213f;
+  background: linear-gradient(120deg, #f7e7cc, #dbbde7);
+  font: 700 .74rem/1.5 "Nunito", sans-serif;
+  letter-spacing: .03em;
+  text-decoration: none;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+
+.seasonal-button:hover {
+  color: #291832;
+  background: #f7e8f6;
+  box-shadow: 0 0 1.8rem rgba(224, 190, 237, .16);
+}
+
+.seasonal-text-link {
+  display: table;
+  margin-top: 1rem;
+  padding: .5rem 0;
+  color: #dfc7e8;
+  font: 400 1rem/1.5 "Cormorant Garamond", Georgia, serif;
+  text-decoration: none;
+}
+
+.seasonal-text-link span { margin-left: .65rem; }
+.seasonal-text-link:hover { color: #fff1db; }
+
+.tier-price-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(226, 200, 238, .35);
+  text-underline-offset: .22em;
+}
+
+.tier-price-link:hover { color: #ffe4b8; }
+.press-on-tiers { min-width: 0; }
+
+.tier-pricing-note {
+  margin: 0 0 .4rem;
+  color: #e3c8ec;
+  font: 600 .72rem/1.6 "Nunito", sans-serif;
+}
+
+.tier-guide-link {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin-top: .8rem;
+  padding: .4rem 0;
+  color: #e4c99f;
+  font: 600 .73rem/1.6 "Nunito", sans-serif;
+  text-underline-offset: .24em;
+}
+
+.tier-guide-link:hover { color: #fff1db; }
+.tier-guide-link span { margin-left: .35rem; }
+
+.art-tier-section {
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(4rem, 8vw, 8rem);
+  background: radial-gradient(ellipse at 50% 35%, rgba(126, 80, 151, .17), transparent 65%), #120d1c;
+}
+
+.art-tier-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(#120d1c 0%, rgba(18, 13, 28, .78) 35%, #120d1c 100%), url("../assets/img/forest-distant.webp") center / cover;
+  opacity: .65;
+  pointer-events: none;
+}
+
+.art-tier-heading { max-width: 44rem; margin: 0 auto 3rem; text-align: center; }
+
+.art-tier-heading h2 {
+  margin: 1rem 0;
+  color: #fff0e4;
+  font: 500 clamp(2.6rem, 4.5vw, 4.3rem)/1.13 "Cormorant Garamond", Georgia, serif;
+  letter-spacing: -.025em;
+}
+
+.art-tier-heading h2 em { color: #dec0eb; font-weight: 400; }
+.art-tier-heading .seasonal-ornament { margin: 1.4rem auto; }
+.art-tier-heading > p { margin: 0 auto; color: #d9c8df; font-size: 1.12rem; line-height: 1.7; }
+.art-tier-heading .art-tier-pricing { margin-top: .7rem; color: #eed9b6; font: 600 .78rem/1.7 "Nunito", sans-serif; letter-spacing: .015em; }
+
+.art-tier-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3rem; }
+
+.art-tier-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  scroll-margin-top: 6.5rem;
+  border: 1px solid rgba(219, 187, 230, .32);
+  border-radius: 7rem 7rem 1.5rem 1.5rem;
+  background: linear-gradient(155deg, #34243e, #241a31 65%);
+  box-shadow: 0 1.4rem 3rem rgba(5, 2, 10, .25), inset 0 1px rgba(255, 235, 246, .1);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.art-tier-card:hover,
+.art-tier-card:target { border-color: #d7b785; box-shadow: 0 1.4rem 3rem rgba(5, 2, 10, .25), 0 0 2rem rgba(218, 179, 237, .1); }
+.art-tier-card__body { position: relative; display: flex; flex: 1; flex-direction: column; padding: 2rem 1.7rem 1.5rem; }
+.art-tier-number { display: block; align-self: center; color: #c7a97e; font: 400 1.1rem/1.3 "Cormorant Garamond", Georgia, serif; letter-spacing: .08em; }
+.art-tier-level { display: block; margin: 1.1rem 0 .4rem; color: #d5bbdf; text-align: center; font: 700 .61rem/1.6 "Nunito", sans-serif; letter-spacing: .19em; text-transform: uppercase; }
+.art-tier-card h3 { margin: 0; color: #fff0e6; text-align: center; font: 500 clamp(2.1rem, 3vw, 2.8rem)/1.2 "Cormorant Garamond", Georgia, serif; }
+.art-tier-price { margin: .65rem 0 1.4rem; color: #efd3a5; text-align: center; font: 500 2.5rem/1.1 "Cormorant Garamond", Georgia, serif; }
+.art-tier-price span { display: block; margin-top: .45rem; color: #cbb8d3; font: 400 .67rem/1.5 "Nunito", sans-serif; letter-spacing: .03em; }
+.art-tier-description { min-height: 5.1em; margin: 0 0 1.1rem; color: #e3d4e8; font: 400 1.03rem/1.7 "Cormorant Garamond", Georgia, serif; text-align: center; }
+.art-tier-features { display: grid; gap: .65rem; padding: 1.25rem 0; margin: 0 0 1.5rem; border-top: 1px solid rgba(226, 193, 151, .26); list-style: none; }
+.art-tier-features li { position: relative; padding-left: 1.15rem; color: #f0e4f3; font: 400 .82rem/1.6 "Nunito", sans-serif; letter-spacing: 0; }
+.art-tier-features li::before { content: "✦"; position: absolute; left: 0; top: .05rem; color: #d0ad78; font-size: .65rem; }
+.art-tier-features li span { display: block; color: #cdbad7; font-size: .75rem; }
+.art-tier-fit { margin: auto 0 0; padding-top: 1rem; border-top: 1px solid rgba(226, 193, 151, .2); color: #d9c8df; font: 400 .92rem/1.65 "Cormorant Garamond", Georgia, serif; }
+.art-tier-fit strong { display: block; margin-bottom: .2rem; color: #f0d7af; font-weight: 600; }
+.art-tier-florals { position: relative; height: 7rem; overflow: hidden; opacity: .8; }
+.art-tier-florals::after { content: ""; position: absolute; inset: 0; background: linear-gradient(#241a31, rgba(36, 26, 49, .1) 60%); }
+.art-tier-florals img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+.art-tier-help { display: flex; align-items: center; justify-content: center; gap: 1rem; max-width: 44rem; margin: 2.5rem auto 0; padding: 1.4rem 0 0; color: #ddcce4; text-align: center; }
+.art-tier-help > span { color: #edd4a9; font-size: 2rem; }
+.art-tier-help p { margin: 0; font: 400 1.05rem/1.7 "Cormorant Garamond", Georgia, serif; }
+.art-tier-help a { color: #f5ddb7; text-underline-offset: .22em; }
+.art-tier-help a:hover { color: #fff5e6; }
+
+.holiday-section a:focus-visible,
+.art-tier-section a:focus-visible,
+.tier-price-link:focus-visible,
+.tier-guide-link:focus-visible { outline: 2px solid #f5d9aa; outline-offset: 5px; border-radius: 3px; }
+
+@media (max-width: 991.98px) {
+  .art-tier-grid { gap: 1rem; }
+  .art-tier-card__body { padding: 2rem 1.15rem 1.25rem; }
+  .art-tier-card { border-radius: 5rem 5rem 1.25rem 1.25rem; }
+}
+
+@media (max-width: 767.98px) {
+  .holiday-feature { grid-template-columns: 1fr; gap: 2.5rem; }
+  .holiday-artwork { width: min(100%, 23rem); margin: 0 auto; }
+  .holiday-copy { text-align: center; }
+  .holiday-copy .seasonal-ornament { margin-inline: auto; }
+  .holiday-description { margin-inline: auto; }
+  .seasonal-text-link { margin-inline: auto; }
+  .art-tier-grid { grid-template-columns: 1fr; gap: 1.75rem; max-width: 29rem; margin: 0 auto; }
+  .art-tier-card { border-radius: 7rem 7rem 1.4rem 1.4rem; }
+  .art-tier-card__body { padding: 2rem 1.75rem 1.4rem; }
+  .art-tier-description { min-height: 0; }
+  .art-tier-features { gap: .7rem; }
+  .art-tier-features li { font-size: .9rem; }
+  .art-tier-fit { font-size: 1rem; }
+  .art-tier-help { gap: .6rem; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seasonal-button,
+  .art-tier-card { transition: none; }
+}

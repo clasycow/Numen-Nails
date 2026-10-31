@@ -19,6 +19,7 @@
         <link href="css/nail-gallery.css" rel="stylesheet" />
         <link href="css/hero-fairy.css?v=1" rel="stylesheet" />
         <link href="css/enchanted-world.css?v=1" rel="stylesheet" />
+        <link href="css/holiday-tiers.css?v=20261030" rel="stylesheet" />
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
         <script src="js/config.js"></script>
     </head>
@@ -169,6 +170,25 @@
             <span class="fairy-spark sparkle-three" aria-hidden="true"></span>
         </section>
    
+        <section class="holiday-section" id="holiday-sets" aria-labelledby="holiday-title">
+            <div class="container px-4 px-lg-5">
+                <div class="holiday-feature">
+                    <div class="holiday-artwork">
+                        <img src="assets/img/holiday-sets.jpg" alt="Numen Nails Holiday Sets — Buy 2, get 1 FREE, surrounded by lavender fairies and flowers." width="1206" height="1545" loading="lazy" decoding="async" />
+                    </div>
+                    <div class="holiday-copy">
+                        <span class="seasonal-eyebrow">A little holiday magic</span>
+                        <h2 id="holiday-title">Holiday <em>sets</em></h2>
+                        <div class="seasonal-ornament" aria-hidden="true"><span></span>✦<span></span></div>
+                        <p class="holiday-offer">Buy 2, get 1 <strong>FREE</strong></p>
+                        <p class="holiday-description">A little sparkle to give. A little magic to keep. Celebrate the season with holiday nails made just for you.</p>
+                        <a class="seasonal-button" href="#contact">Plan my holiday sets <span aria-hidden="true">↗</span></a>
+                        <a class="seasonal-text-link" href="#nail-art-tiers">Explore the nail art tiers <span aria-hidden="true">↓</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="projects-section nail-portfolio" id="projects" aria-labelledby="projects-title" data-world="forest">
             <div class="collection-worlds" aria-hidden="true">
                 <div class="collection-world collection-world-forest"></div>
@@ -519,12 +539,13 @@
                             </dl>
                         </article>
                         <article class="price-card">
-                            <div class="price-card__heading"><i class="fas fa-palette"></i><h3>Add-Ons</h3><small>Priced per finger</small></div>
+                            <div class="price-card__heading"><i class="fas fa-palette"></i><h3>Add-Ons</h3><small>Nail art tiers · per set</small></div>
                             <dl class="price-list price-list-compact">
-                                <div><dt>Nail Art</dt><dd>$2</dd></div><div><dt>Gems</dt><dd>$2</dd></div>
-                                <div><dt>Ombré</dt><dd>$3</dd></div><div><dt>Stickers</dt><dd>$3</dd></div>
-                                <div><dt>3D Art</dt><dd>$5</dd></div><div><dt>Chrome</dt><dd>$2</dd></div>
+                                <div><dt><a class="tier-price-link" href="#tier-one">Tier One</a></dt><dd>+$15</dd></div>
+                                <div><dt><a class="tier-price-link" href="#tier-two">Tier Two</a></dt><dd>+$25</dd></div>
+                                <div><dt><a class="tier-price-link" href="#tier-three">Tier Three</a></dt><dd>+$35</dd></div>
                             </dl>
+                            <a class="tier-guide-link" href="#nail-art-tiers">What’s in each tier? <span aria-hidden="true">↗</span></a>
                         </article>
                         <article class="price-card price-card-wide">
                             <div class="price-card__heading"><i class="fas fa-box-open"></i><h3>Custom Press-Ons</h3><small>Made-to-measure magic</small></div>
@@ -534,12 +555,15 @@
                                     <div><dt>Long</dt><dd>$40</dd></div><div><dt>XL</dt><dd>$45</dd></div>
                                     <div><dt>XXL</dt><dd>$50</dd></div>
                                 </dl>
-                                <dl class="price-list price-list-compact">
-                                    <div><dt>Nail Art</dt><dd>$2</dd></div><div><dt>Gems</dt><dd>$2</dd></div>
-                                    <div><dt>Ombré</dt><dd>$3</dd></div><div><dt>Stickers</dt><dd>$3</dd></div>
-                                    <div><dt>3D Art</dt><dd>$5</dd></div><div><dt>Chrome</dt><dd>$2</dd></div>
-                                    <div><dt>Cat Eye</dt><dd>$2</dd></div>
-                                </dl>
+                                <div class="press-on-tiers">
+                                    <p class="tier-pricing-note">Add your nail art tier</p>
+                                    <dl class="price-list price-list-compact">
+                                        <div><dt><a class="tier-price-link" href="#tier-one">Tier One</a></dt><dd>+$15</dd></div>
+                                        <div><dt><a class="tier-price-link" href="#tier-two">Tier Two</a></dt><dd>+$25</dd></div>
+                                        <div><dt><a class="tier-price-link" href="#tier-three">Tier Three</a></dt><dd>+$35</dd></div>
+                                    </dl>
+                                    <a class="tier-guide-link" href="#nail-art-tiers">Explore the tier guide <span aria-hidden="true">↗</span></a>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -618,6 +642,89 @@
                     <a class="portfolio-button portfolio-button-light" href="#signup">
                         Plan my set <i class="fas fa-wand-magic-sparkles" aria-hidden="true"></i>
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="art-tier-section" id="nail-art-tiers" aria-labelledby="art-tiers-title">
+            <div class="container px-4 px-lg-5">
+                <header class="art-tier-heading">
+                    <span class="seasonal-eyebrow">The art behind your set</span>
+                    <h2 id="art-tiers-title">A little detail.<br /><em>A whole lot of magic.</em></h2>
+                    <div class="seasonal-ornament" aria-hidden="true"><span></span>✦<span></span></div>
+                    <p>From a subtle shimmer to a tiny work of art, find the tier that feels like you.</p>
+                    <p class="art-tier-pricing">Choose one art tier. Its price is added to your base set price.</p>
+                </header>
+
+                <div class="art-tier-grid">
+                    <article class="art-tier-card" id="tier-one" aria-labelledby="tier-one-title">
+                        <div class="art-tier-card__body">
+                            <span class="art-tier-number" aria-hidden="true">I</span>
+                            <span class="art-tier-level">Minimalist</span>
+                            <h3 id="tier-one-title">Tier One</h3>
+                            <p class="art-tier-price">+$15 <span>added to your set</span></p>
+                            <p class="art-tier-description">Soft, simple, and beautifully you. A subtle, clean finish with classic details.</p>
+                            <ul class="art-tier-features">
+                                <li>French tips</li>
+                                <li>Chrome</li>
+                                <li>Cat eye</li>
+                                <li>Glitter</li>
+                                <li>Simple art</li>
+                                <li>Minimal gems</li>
+                                <li>Small 3D art</li>
+                                <li>Minimal line art</li>
+                            </ul>
+                            <p class="art-tier-fit"><strong>Your tier if…</strong> you love a classic, minimal look with 1–3 elements from these options.</p>
+                        </div>
+                        <div class="art-tier-florals" aria-hidden="true"><img src="assets/img/tier-one.jpg" alt="" width="1206" height="1565" loading="lazy" decoding="async" /></div>
+                    </article>
+
+                    <article class="art-tier-card" id="tier-two" aria-labelledby="tier-two-title">
+                        <div class="art-tier-card__body">
+                            <span class="art-tier-number" aria-hidden="true">II</span>
+                            <span class="art-tier-level">Intermediate</span>
+                            <h3 id="tier-two-title">Tier Two</h3>
+                            <p class="art-tier-price">+$25 <span>added to your set</span></p>
+                            <p class="art-tier-description">A little more detail, a little more personality. The sweet spot between classic and dramatic.</p>
+                            <ul class="art-tier-features">
+                                <li>Detailed French tips</li>
+                                <li>Isolated chrome</li>
+                                <li>Light texture</li>
+                                <li>Aura designs</li>
+                                <li>Animal prints</li>
+                                <li>Intermediate art</li>
+                                <li>Stripes</li>
+                                <li>1–2 bling nails</li>
+                            </ul>
+                            <p class="art-tier-fit"><strong>Your tier if…</strong> you want a different element on each nail, or a design beyond classic and minimal.</p>
+                        </div>
+                        <div class="art-tier-florals" aria-hidden="true"><img src="assets/img/tier-two.jpg" alt="" width="1206" height="1539" loading="lazy" decoding="async" /></div>
+                    </article>
+
+                    <article class="art-tier-card" id="tier-three" aria-labelledby="tier-three-title">
+                        <div class="art-tier-card__body">
+                            <span class="art-tier-number" aria-hidden="true">III</span>
+                            <span class="art-tier-level">Advanced</span>
+                            <h3 id="tier-three-title">Tier Three</h3>
+                            <p class="art-tier-price">+$35 <span>added to your set</span></p>
+                            <p class="art-tier-description">For nails that tell a story. Intricate details, sculpted accents, and statement-making art.</p>
+                            <ul class="art-tier-features">
+                                <li>Detailed art</li>
+                                <li>Advanced 3D art</li>
+                                <li>Character art <span>(Hello Kitty, etc.)</span></li>
+                                <li>Junk nails</li>
+                                <li>Heavy rhinestones / bling</li>
+                                <li>Multiple shaped nails</li>
+                            </ul>
+                            <p class="art-tier-fit"><strong>Your tier if…</strong> your design combines elements across the tiers, including advanced details, or lots of hand-drawn art.</p>
+                        </div>
+                        <div class="art-tier-florals" aria-hidden="true"><img src="assets/img/tier-three.jpg" alt="" width="1206" height="1556" loading="lazy" decoding="async" /></div>
+                    </article>
+                </div>
+
+                <div class="art-tier-help">
+                    <span aria-hidden="true">✧</span>
+                    <p>Not sure which tier fits your vision? <a href="#contact">Send me your inspiration</a> and we’ll find your magic together.</p>
                 </div>
             </div>
         </section>
